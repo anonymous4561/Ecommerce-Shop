@@ -10,10 +10,7 @@ import { Slider } from '../Components/Slider'
 import env from "react-dotenv";
 
 const Home = () => {
-  
- console.log('====================================');
- console.log( process.env.REACT_APP_STRIPE_KEY);
- console.log('===================================='); 
+
   const location = useLocation();
   console.log(location);
   return (
