@@ -15,7 +15,7 @@ export const Success = () => {
   useEffect( () => {
     if (currentUser === null)
       navigate("/login");
-  }, [currentUser]);
+  }, [currentUser,navigate]);
 
 useEffect(()=>{
   const createOrder = async () =>{

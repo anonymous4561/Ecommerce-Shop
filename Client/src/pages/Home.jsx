@@ -7,7 +7,7 @@ import { Navbar } from '../Components/Navbar'
 import Newsletter from '../Components/Newsletter'
 import { Products } from '../Components/Products'
 import { Slider } from '../Components/Slider'
-import env from "react-dotenv";
+
 
 const Home = () => {
 

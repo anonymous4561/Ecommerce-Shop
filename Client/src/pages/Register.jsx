@@ -70,7 +70,7 @@ const Register = () => {
   const dispatch = useDispatch();
  
   const handleValidation = () => {
-    const { password, confirmPassword, mobile, email } = inputs;
+    const { password, confirmPassword, mobile } = inputs;
     if (password !== confirmPassword) {
      alert("confirm password and password has to be same")
       return false;

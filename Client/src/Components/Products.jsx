@@ -51,10 +51,10 @@ export const Products = ({filters,cat,sort}) => {
   return (
     <Container>
          {cat
-        ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
+        ? filteredProducts.map((item) => <Product item={item} key={item._id} />)
         : products
             
-            .map((item) => <Product item={item} key={item.id} />)}
+            .map((item) => <Product item={item} key={item._id} />)}
        
     </Container>
   )

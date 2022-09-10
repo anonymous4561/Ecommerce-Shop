@@ -15,7 +15,7 @@ export const SuccessCOD = () => {
   useEffect( () => {
     if (currentUser === null)
       navigate("/login");
-  }, []);
+  }, [navigate,currentUser]);
 
   
   useEffect(()=>{

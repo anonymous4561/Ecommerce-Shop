@@ -8,10 +8,9 @@ import { Navbar } from '../Components/Navbar'
 import {publicRequest} from '../requestMethod';
 import Newsletter from '../Components/Newsletter'
 import { useDispatch,useSelector } from 'react-redux'
-import { Products } from '../Components/Products'
 import { addProduct } from '../redux/cartRedux'
 import { mobile } from "../responsive";
-import { addCartProduct } from '../redux/apiCalls'
+
 
 const Container = styled.div``
 

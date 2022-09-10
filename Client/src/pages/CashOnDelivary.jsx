@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+import { useSelector} from 'react-redux'
 import { useLocation, useNavigate } from 'react-router'
 import StripeCheckout from 'react-stripe-checkout'
 import styled from 'styled-components'
 import Announcement from '../Components/Announcement'
 import { Navbar } from '../Components/Navbar'
 import { userRequest } from '../requestMethod'
-import {Login} from './Login';
 
 const KEY = process.env.REACT_APP_STRIPE_KEY;
 
@@ -68,7 +67,6 @@ const CashOnDelivary = () => {
   const cart = useSelector(state=>state.cart);
   const [stripeToken,setStripeToken] =useState(null);
   const currentUser = useSelector((state)=>state.user.currentUser);
-  const {quantity,total} =cart;
   const products = location.state.products;
   console.log(products);
   const onToken = (token)=>{
@@ -118,7 +116,7 @@ const login =(e)=>{
         
     }
        stripeToken  &&  postMoney();
-   },[stripeToken]);
+   },[stripeToken,cart,navigate]);
   return (
     <>
     {currentUser!==null?

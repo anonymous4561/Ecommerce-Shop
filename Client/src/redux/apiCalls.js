@@ -1,5 +1,5 @@
-import { publicRequest, userRequest } from "../requestMethod";
-import { addProduct, deleteProductFailure, deleteProductStart, deleteProductSuccess, errorProduct } from "./cartRedux";
+import { publicRequest } from "../requestMethod";
+import {  deleteProductFailure, deleteProductStart, deleteProductSuccess } from "./cartRedux";
 import { loginFailure, loginStart, loginSuccess } from "./userRedux";
 
 

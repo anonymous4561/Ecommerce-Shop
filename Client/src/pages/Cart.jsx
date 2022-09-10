@@ -1,14 +1,11 @@
 import { Add, Remove } from '@material-ui/icons';
-import {useState,useEffect} from 'react'
 import styled from 'styled-components';
 import Announcement from '../Components/Announcement';
 import { Footer } from '../Components/Footer';
 import { Navbar } from '../Components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { publicRequest, userRequest } from '../requestMethod';
 import {useNavigate} from 'react-router-dom';
-import { deleteProduct } from '../redux/apiCalls';
 import { deleteProductSuccess } from '../redux/cartRedux';
 import { mobile } from "../responsive";
 
@@ -168,7 +165,7 @@ cursor:pointer;
 
 export const Cart = () => {
   const cart = useSelector(state=>state.cart);
-  const {products,quantity,Paytotal} =cart;
+  const {products,Paytotal} =cart;
   const navigate = useNavigate();
   const dispatch = useDispatch();
   console.log('====================================');
@@ -192,7 +189,7 @@ const handleDelete = (product)=>{
   dispatch(deleteProductSuccess({price,_id,quantity}));
 }
  
-  const KEY = process.env.STRIPE_KEY;
+  
   return (
     <Container>
     <Navbar/>
