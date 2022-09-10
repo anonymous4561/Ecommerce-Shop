@@ -9,12 +9,12 @@ export default function FeaturedInfo() {
  const admin = localStorage.getItem("persist:root") &&  JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser;
 
   const [income,setIncome] =useState();
-  const [perc,setPerc] =useState();
+ // const [perc,setPerc] =useState();
   console.log(income);
   useEffect(()=>{
  const getIncome = async() =>{
   const res = await userRequest.get("/orders/income");
-    setIncome(res.data[0].total)
+    setIncome(res.data[0]?.total);
  }
   admin&& getIncome();
   },[])
@@ -23,7 +23,7 @@ export default function FeaturedInfo() {
       <div className="featuredItem">
         <span className="featuredTitle">Revanue</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">${income}</span>
+          <span className="featuredMoney">${income?income:0}</span>
           <span className="featuredMoneyRate">{1.5}%{" "}
             {10>0? (<ArrowUpward className="featuredIcon"/>) :
             <ArrowDownward  className="featuredIcon negative"/>
