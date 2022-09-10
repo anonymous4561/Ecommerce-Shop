@@ -12,7 +12,7 @@ export const Success = () => {
   const currentUser = useSelector((state)=>state.user.currentUser);
   const[orderId,setOrderId] = useState(null);
   
-  useEffect(async () => {
+  useEffect( () => {
     if (currentUser === null)
       navigate("/login");
   }, [currentUser]);

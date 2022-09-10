@@ -2,7 +2,9 @@ const jwt = require("jsonwebtoken");
 
 
 module.exports.verifyToken = (req,res,next)=>{
-  const header = req.headers.token;
+  const header = req.headers.token
+  if(!header)
+   return res.json(402).status("no Token please Login");
   if(header){
   const token = header.split(" ")[1];
   jwt.verify(token,process.env.JWT,(err,user)=>{
@@ -14,7 +16,7 @@ console.log(err);
     
   });
 }else{
-    res.status(401).json("You are not authenticated");
+   return res.status(401).json("You are not authenticated");
 }
 
 }
@@ -24,7 +26,7 @@ module.exports.verifyTokenAndAuthorization = (req,res,next)=>{
         if(req.params.id===req.user.id||req.user.isAdmin){
             next();
         }else{
-            res.status(403).status("You are not allowed to do that");
+          return  res.status(403).status("You are not allowed to do that");
         }
     });
 }
@@ -34,7 +36,7 @@ module.exports.verifyTokenAndAdmin = (req,res,next)=>{
         if(req.user.isAdmin){
             next();
         }else{
-            res.status(403).status("You are not allowed to do that");
+         return   res.status(403).status("You are not allowed to do that");
         }
     });
 }

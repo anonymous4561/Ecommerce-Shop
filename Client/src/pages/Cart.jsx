@@ -168,9 +168,12 @@ cursor:pointer;
 
 export const Cart = () => {
   const cart = useSelector(state=>state.cart);
-  const {products,quantity,total} =cart;
+  const {products,quantity,Paytotal} =cart;
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  console.log('====================================');
+  console.log(products);
+  console.log('====================================');
   
   const handleCheckout =() =>{
     navigate("/checkout",{
@@ -251,7 +254,7 @@ const handleDelete = (product)=>{
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ {total}</SummaryItemPrice>
+              <SummaryItemPrice>$ {Paytotal}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -263,7 +266,7 @@ const handleDelete = (product)=>{
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ {total} </SummaryItemPrice>
+              <SummaryItemPrice>$ {Paytotal} </SummaryItemPrice>
             </SummaryItem>
            
            

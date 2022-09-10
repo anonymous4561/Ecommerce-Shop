@@ -7,7 +7,7 @@ const cartSlice = createSlice({
     initialState:{
         quantity:0,
         products:[],
-        total:0,
+        Paytotal:0,
         isFetching:false,
         error:false,
     },
@@ -15,8 +15,11 @@ const cartSlice = createSlice({
         addProduct:(state,action)=>
          {
             state.quantity += 1;
-            state.total +=action.payload.price *action.payload.quantity;
+            state.Paytotal +=action.payload.price *action.payload.quantity;
             state.products.push(action.payload);
+         },
+         errorProduct:(state)=>{
+            state.error=true;
          },
           //Delete
        deleteProductStart:(state)=>{
@@ -36,5 +39,5 @@ const cartSlice = createSlice({
     }
 });
 
-export const {addProduct,deleteProductFailure,deleteProductSuccess,deleteProductStart} = cartSlice.actions;
+export const {addProduct, errorProduct,deleteProductFailure,deleteProductSuccess,deleteProductStart} = cartSlice.actions;
 export  default cartSlice.reducer;

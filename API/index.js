@@ -5,8 +5,8 @@ const mongoose =require("mongoose");
 const authRoute =require("./routes/auth");
 const userRoute =require("./routes/user");
 const productRoute = require("./routes/product");
-const cartRoute = require("./routes/Cart");
-const orderRoute =  require("./routes/Order");
+const cartRoute = require("./routes/cart");
+const orderRoute =  require("./routes/order");
 const payment =require("./routes/stripe");
 app.use(express.json());
 app.use(cors());
@@ -24,6 +24,6 @@ app.use("/api/products",productRoute);
 app.use("/api/carts",cartRoute);
 app.use("/api/orders",orderRoute);
 app.use("/api/checkout",payment);
-app.listen(process.env.PORT,()=>{
+app.listen(process.env.PORT || 5000,()=>{
     console.log(`server connected successfully on Port ${process.env.PORT}`);
 })

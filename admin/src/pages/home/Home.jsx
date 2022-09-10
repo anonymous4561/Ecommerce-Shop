@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 export default function Home() {
  const admin = localStorage.getItem("persist:root") &&  JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser;
 
-//  const admin = useSelector((state)=>state.user.currentUser.isAdmin);
+// const admin = useSelector((state)=>state.user.currentUser.isAdmin);
 
   
   const [userStats,setUserStats] = useState([]);

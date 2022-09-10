@@ -7,10 +7,11 @@ import { Footer } from '../Components/Footer'
 import { Navbar } from '../Components/Navbar'
 import {publicRequest} from '../requestMethod';
 import Newsletter from '../Components/Newsletter'
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { Products } from '../Components/Products'
 import { addProduct } from '../redux/cartRedux'
 import { mobile } from "../responsive";
+import { addCartProduct } from '../redux/apiCalls'
 
 const Container = styled.div``
 
@@ -130,6 +131,13 @@ export const Product = () => {
   const [quantity,setQuantity] =useState(1);
   const [color,setColor] =useState("");
   const [size,setSize] =useState("");
+  const currentUserID = useSelector((state)=>state.user?.currentUser?._id);
+  console.log('====================================');
+  console.log(currentUserID);
+  console.log('====================================');
+  console.log('====================================');
+  console.log(product);
+  console.log('====================================');
 
  const handleQuantity = (type)=>{
   if(type==="minus"){
@@ -149,6 +157,9 @@ export const Product = () => {
 
 
   const handleSubmit = ()=>{
+    // addCartProduct(dispatch,{
+    //  ...product,quantity,color,size ,currentUserID
+    //  });
    dispatch(addProduct({
     ...product,quantity,color,size
    }));

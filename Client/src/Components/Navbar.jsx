@@ -97,7 +97,7 @@ export const Navbar = () => {
     <Wrapper>
       <Left>
         <Language onClick={logOut}>
-          EN
+          LG
         </Language>
         <SearchContainer style={{color:"gray",fontSize:16}} >
             <Input/>
