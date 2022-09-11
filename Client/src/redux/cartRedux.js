@@ -31,7 +31,7 @@ const cartSlice = createSlice({
             state.products.findIndex((item)=>item._id===action.payload._id),1
         );
         state.quantity -= 1;
-        state.total -= action.payload.price *action.payload.quantity;
+        state.Paytotal -= action.payload.price *action.payload.quantity;
        },
        deleteProductFailure:(state)=>{
         state.error=true;
