@@ -74,6 +74,7 @@ const MenuItem = styled.div`
 
 
 export const Navbar = () => {
+  const currentUser = useSelector((state)=>state.user.currentUser);
   const quantity = useSelector((state)=>state.cart.quantity);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -96,9 +97,11 @@ export const Navbar = () => {
     <Container>
     <Wrapper>
       <Left>
-        <Language onClick={logOut}>
+        {currentUser == null? <Language>EN</Language> :<Language onClick={logOut}>
           LG
-        </Language>
+        </Language>}
+       
+        
         <SearchContainer style={{color:"gray",fontSize:16}} >
             <Input/>
           <SearchIcon/>
