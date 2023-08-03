@@ -15,8 +15,8 @@ export const Products = ({filters,cat,sort}) => {
   const [filteredProducts,setFilteredProducts] = useState([]);
   useEffect(()=>{
    const getProducts = async()=>{
-    const res = await axios.get( cat ? `https://shara-collection.herokuapp.com/api/products?category=${cat}`: 
-    "https://shara-collection.herokuapp.com/api/products" );
+    const res = await axios.get( cat ? `https://ruby-sore-whale.cyclic.cloud/api/products?category=${cat}`: 
+    "https://ruby-sore-whale.cyclic.cloud/api/products" );
     setProducts(res.data);
    }
    getProducts();

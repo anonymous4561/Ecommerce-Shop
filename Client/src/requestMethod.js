@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base_url = "https://shara-collection.herokuapp.com/api/";
+var base_url = "https://ruby-sore-whale.cyclic.cloud/api/";
 // const currentUser = localStorage.getItem("persist:root") &&  JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser;
  const Token =  localStorage.getItem("persist:root") && JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser?.accessToken;
 
