@@ -15,8 +15,8 @@ export const Products = ({filters,cat,sort}) => {
   const [filteredProducts,setFilteredProducts] = useState([]);
   useEffect(()=>{
    const getProducts = async()=>{
-    const res = await axios.get( cat ? `https://ruby-sore-whale.cyclic.cloud/api/products?category=${cat}`: 
-    "https://ruby-sore-whale.cyclic.cloud/api/products" );
+    const res = await axios.get( cat ? `https://ecommerce-c51q.onrender.com/api/products?category=${cat}`: 
+    "https://ecommerce-c51q.onrender.com/api/products" );
     setProducts(res.data);
    }
    getProducts();
